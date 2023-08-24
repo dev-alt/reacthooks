@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Counter from './Counter';
+// eslint-disable-next-line
+import { Button, Box, AppBar, Toolbar, Typography, Grid } from '@mui/material';
+import PlanetInfo from './PlanetInfo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ textAlign: 'center', mt: 5 }}>
+      <AppBar>
+<Typography variant="h3" sx={{ fontWeight: 600, color: 'Blue', marginBottom: 5, mt: 5 }}>React Hooks</Typography>
+</AppBar>
+    <Grid container justifyContent="center" alignItems="stretch" spacing={3} mt={15}>
+
+      <Grid item xs={12} sm={6}>
+        <Box sx={{ p: 8, ml: 2, borderRadius: '8px', textAlign: 'center', }}>
+          <Counter />
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={6} mb={5}>
+        <Box sx={{ p: 8, mr: 2, borderRadius: '8px', textAlign: 'center', }}>
+          <PlanetInfo />
+        </Box>
+      </Grid>
+    </Grid>
+    </Box>
   );
 }
 
